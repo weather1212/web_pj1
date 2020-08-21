@@ -26,3 +26,11 @@ Servers/*
 hs_err_pid*
 .metadata/
 apache-tomcat-9.0.34/
+*.class
+
+georgia/src/main/resources/config/database.properties
+
+# Tern plugin
+.tern-project
+georgia/src/main/resources/applicationContext.xml
+georgia/src/main/resources/applicationContext.xml
