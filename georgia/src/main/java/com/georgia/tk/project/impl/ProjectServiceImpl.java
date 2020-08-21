@@ -12,8 +12,8 @@ public class ProjectServiceImpl implements ProjectService{
 	@Autowired
 	private ProjectDAO projectDAO;
 	@Override
-	public List<ProjectVO> listSelectProject() {
-		return projectDAO.listSelectProject();
+	public List<ProjectVO> listSelectProject(ProjectVO projectVO) {
+		return projectDAO.listSelectProject(projectVO);
 	}
 	
 	@Override

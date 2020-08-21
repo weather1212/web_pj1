@@ -14,6 +14,8 @@
 	<select id="listSelectProject" resultMap="projectResult">
 		SELECT *
 		FROM project
+		ORDER BY p_id
+		LIMIT #{page}, 20
 	</select>
 
 	<select id="oneSelectProject" resultType="project">

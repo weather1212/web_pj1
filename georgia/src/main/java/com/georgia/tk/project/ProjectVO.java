@@ -12,4 +12,5 @@ public class ProjectVO {
 	Date p_start;
 	Date p_end;
 	String p_state;
+	int page;
 }

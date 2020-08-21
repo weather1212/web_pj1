@@ -12,8 +12,8 @@ public class ProjectDAO {
 	@Autowired
 	public SqlSessionTemplate mybatis;
 	
-	public List<ProjectVO> listSelectProject() {
-		return mybatis.selectList("projectDAO.listSelectProject");
+	public List<ProjectVO> listSelectProject(ProjectVO projectVO) {
+		return mybatis.selectList("projectDAO.listSelectProject", projectVO);
 	}	
 	
 	public ProjectVO oneSelectProject(ProjectVO projectVO) {
