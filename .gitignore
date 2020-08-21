@@ -1,12 +1,15 @@
 # Compiled class file
-*.class
-
+georgia/.classpath
+georgia/.project
+georgia/.springBeans
+georgia/.settings
 # Log file
-*.log
+**/log4j.xml
+Servers/*
 
 # BlueJ files
 *.ctxt
-
+*/target/*
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -21,3 +24,5 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.metadata/
+apache-tomcat-9.0.34/

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<typeAlias alias="project" type="com.georgia.tk.project.ProjectVO" />
+		<typeAlias alias="emp" type="com.georgia.tk.emp.EmpVO" />
+		<typeAlias alias="profit" type="com.georgia.tk.profit.ProfitVO" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="mappings/project-mapping.xml" />
+		<mapper resource="mappings/emp-mapping.xml" />
+		<mapper resource="mappings/profit-mapping.xml" />
+	</mappers>
+
+</configuration> 
