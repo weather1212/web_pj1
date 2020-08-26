@@ -13,10 +13,7 @@ import com.georgia.tk.project.ProjectService;
 public class EmpController {
 	@Autowired
 	private EmpService empService;
-	@Autowired
-	private ProfitService profitService;
-	@Autowired
-	private ProjectService projectService;
+	
 	
 	@RequestMapping("/test")
 	public String test(HttpServletRequest request) {
