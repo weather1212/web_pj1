@@ -14,7 +14,7 @@ public class EmpDAO {
 	public SqlSessionTemplate mybatis;
 	
 	public List<EmpVO> listSelectEmp(EmpVO empVO) {
-		return null;
+		return mybatis.selectList("empDAO.listSelectEmp", empVO);
 	}
 
 	public EmpVO oneSelectEmp(EmpVO empVO) {
