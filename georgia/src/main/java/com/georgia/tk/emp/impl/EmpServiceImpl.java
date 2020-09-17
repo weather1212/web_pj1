@@ -14,7 +14,7 @@ public class EmpServiceImpl implements EmpService{
 	
 	@Override
 	public List<EmpVO> listSelectEmp(EmpVO empVO) {
-		return null;
+		return empDAO.listSelectEmp(empVO);
 	}
 
 	@Override
