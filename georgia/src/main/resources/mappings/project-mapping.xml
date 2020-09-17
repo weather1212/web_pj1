@@ -11,25 +11,25 @@
 		<result property="p_state" column="p_state" />
 	</resultMap>
 
-	<select id="listSelectProject" resultMap="projectResult">
-		SELECT *
+	<select id="projectList" resultMap="projectResult">
+		SELECT * 
 		FROM project
 		ORDER BY p_id
 		LIMIT #{page}, 20
 	</select>
 
-	<select id="oneSelectProject" resultType="project">
+	<select id="projectDetail" resultType="project">
 		SELECT *
 		FROM project
 		WHERE p_id = #{p_id}
 	</select>
 
-	<insert id="createProject" parameterType="project">
+	<insert id="projectCreate" parameterType="project">
 		INSERT INTO project(p_id, p_name, p_content, p_start, p_end, p_state)
 		VALUES((SELECT IFNULL(MAX(p_id)+1,1) FROM project ALIAS_FOR_SUBQUERY), #{p_name}, #{p_content}, #{p_start}, #{p_end}, #{p_state})
 	</insert>
 	
-	<update id="updateProject" parameterType="project">
+	<update id="projectUpdate" parameterType="project">
 		UPDATE project
 		SET p_name = #{p_name}, p_content= #{p_content}, p_start=  #{p_start}, p_end = #{p_end}, p_state = #{p_state}
 		WHERE p_id = #{p_id} 
