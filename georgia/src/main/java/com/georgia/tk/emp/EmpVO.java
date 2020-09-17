@@ -8,7 +8,9 @@ public class EmpVO {
 	String emp_name;
 	String emp_department;
 	String emp_position;
+	String emp_hiredate;
 	String emp_profit;
 	int emp_salary;
 	String emp_state;
+	int page;
 }
