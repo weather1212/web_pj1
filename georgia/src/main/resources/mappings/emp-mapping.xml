@@ -2,4 +2,39 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="empDAO">
 
+	<resultMap id="empResult" type="emp">
+		<id property="emp_id" column="emp_id" />
+		<result property="emp_name" column="emp_name" />
+		<result property="emp_department" column="emp_department" />
+		<result property="emp_position" column="emp_position" />
+		<result property="emp_hiredate" column="emp_hiredate" />		
+		<result property="emp_profit" column="emp_profit" />
+		<result property="emp_salary" column="emp_salary" />
+		<result property="emp_state" column="emp_state" />
+	</resultMap>
+
+	<select id="empList" resultMap="empResult">
+		SELECT *
+		FROM emp
+		ORDER BY emp_id
+		LIMIT #{page}, 20
+	</select>
+
+	<select id="empDetail" resultType="emp">
+		SELECT *
+		FROM emp
+		WHERE emp_id = #{emp_id}
+	</select>
+
+	<insert id="empCreate" parameterType="emp">
+		INSERT INTO emp(emp_id, emp_name, emp_department, emp_position, emp_hiredate, emp_profit, emp_salary, emp_state)
+		VALUES((SELECT IFNULL(MAX(emp_id)+1,1) FROM project ALIAS_FOR_SUBQUERY), #{emp_name}, #{emp_department}, #{emp_position}, sysdate, #{emp_porfit}, #{emp_salary}, #{emp_state})
+	</insert>
+	
+	<update id="empUpdate" parameterType="emp">
+		UPDATE emp
+		SET emp_name = #{emp_name}, emp_department = #{emp_department}, emp_position = #{emp_position}, emp_profit = #{emp_profit}, emp_salary = #{emp_salary}, emp_state = #{emp_state}
+		WHERE emp_id = #{emp_id} 
+	</update>
+	
 </mapper>

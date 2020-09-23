@@ -11,4 +11,5 @@ public class EmpVO {
 	String emp_profit;
 	int emp_salary;
 	String emp_state;
+	int page;
 }
