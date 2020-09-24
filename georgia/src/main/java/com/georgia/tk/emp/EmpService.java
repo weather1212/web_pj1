@@ -1,7 +1,7 @@
 package com.georgia.tk.emp;
 
 import java.util.List;
-sdfg
+
 public interface EmpService {
 	public List<EmpVO> empList(EmpVO empVO);
 	public EmpVO empDetail(EmpVO empVO);

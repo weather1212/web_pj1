@@ -15,10 +15,10 @@ import com.georgia.tk.project.ProjectService;
 
 @Controller
 public class EmpController {
+	
 	@Autowired
 	private EmpService empService;
 	
-	dfgsfgdsg
 	@RequestMapping("/empList")
 	public String test(String page, EmpVO empVO, HttpServletRequest request) {
 		if(page==null || page.equals("1")) {
