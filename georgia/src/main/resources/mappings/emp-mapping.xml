@@ -13,28 +13,27 @@
 		<result property="emp_state" column="emp_state" />
 	</resultMap>
 
-	<select id="empList" resultMap="empResult">
+	<select id="listSelectEmp" resultMap="empResult">
 		SELECT *
 		FROM emp
 		ORDER BY emp_id
 		LIMIT #{page}, 20
 	</select>
 
-	<select id="empDetail" resultType="emp">
+	<select id="oneSelectEmp" resultType="emp">
 		SELECT *
 		FROM emp
 		WHERE emp_id = #{emp_id}
 	</select>
 
-	<insert id="empCreate" parameterType="emp">
+	<insert id="createEmp" parameterType="emp">
 		INSERT INTO emp(emp_id, emp_name, emp_department, emp_position, emp_hiredate, emp_profit, emp_salary, emp_state)
 		VALUES((SELECT IFNULL(MAX(emp_id)+1,1) FROM project ALIAS_FOR_SUBQUERY), #{emp_name}, #{emp_department}, #{emp_position}, sysdate, #{emp_porfit}, #{emp_salary}, #{emp_state})
 	</insert>
 	
-	<update id="empUpdate" parameterType="emp">
+	<update id="updateEmp" parameterType="emp">
 		UPDATE emp
 		SET emp_name = #{emp_name}, emp_department = #{emp_department}, emp_position = #{emp_position}, emp_profit = #{emp_profit}, emp_salary = #{emp_salary}, emp_state = #{emp_state}
 		WHERE emp_id = #{emp_id} 
 	</update>
-	
 </mapper>
