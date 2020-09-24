@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.georgia.tk.emp.EmpService;
 import com.georgia.tk.emp.EmpVO;
+import com.georgia.tk.profit.ProfitService;
+import com.georgia.tk.project.ProjectService;
+
 @Controller
 public class EmpController {
 	@Autowired
@@ -17,7 +20,7 @@ public class EmpController {
 	
 	dfgsfgdsg
 	@RequestMapping("/empList")
-	public String empList(String page, EmpVO empVO, HttpServletRequest request) {
+	public String test(String page, EmpVO empVO, HttpServletRequest request) {
 		if(page==null || page.equals("1")) {
 			page="1";
 			empVO.setPage(0);

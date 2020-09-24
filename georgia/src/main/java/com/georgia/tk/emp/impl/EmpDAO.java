@@ -13,7 +13,6 @@ public class EmpDAO {
 	@Autowired
 	public SqlSessionTemplate mybatis;
 	
-sdfgsfg
 	public List<EmpVO> empList(EmpVO empVO) {
 		return mybatis.selectList("empDAO.empList", empVO);
 	}

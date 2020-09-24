@@ -36,5 +36,4 @@
 		SET emp_name = #{emp_name}, emp_department = #{emp_department}, emp_position = #{emp_position}, emp_profit = #{emp_profit}, emp_salary = #{emp_salary}, emp_state = #{emp_state}
 		WHERE emp_id = #{emp_id} 
 	</update>
-	
 </mapper>

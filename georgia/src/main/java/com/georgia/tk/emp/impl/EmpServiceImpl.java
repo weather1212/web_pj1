@@ -12,7 +12,6 @@ public class EmpServiceImpl implements EmpService{
 	@Autowired
 	private EmpDAO empDAO;
 	
-dfsgfg
 	@Override
 	public List<EmpVO> empList(EmpVO empVO) {
 		return empDAO.empList(empVO);
@@ -30,7 +29,7 @@ dfsgfg
 
 	@Override
 	public void empUpdate(EmpVO empVO) {
-		empDAO.empUpdate(empVO);
+		empDAO.empUpdate(empVO);		
 	}
 
 }
