@@ -15,7 +15,7 @@ public class EmpController {
 	@Autowired
 	private EmpService empService;
 	
-	
+	dfgsfgdsg
 	@RequestMapping("/empList")
 	public String empList(String page, EmpVO empVO, HttpServletRequest request) {
 		if(page==null || page.equals("1")) {
