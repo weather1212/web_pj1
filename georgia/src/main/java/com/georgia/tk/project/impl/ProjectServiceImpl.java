@@ -11,24 +11,23 @@ import com.georgia.tk.project.ProjectVO;
 public class ProjectServiceImpl implements ProjectService{
 	@Autowired
 	private ProjectDAO projectDAO;
+	@Override
+	public List<ProjectVO> listSelectProject(ProjectVO projectVO) {
+		return projectDAO.listSelectProject(projectVO);
+	}
 	
 	@Override
-	public List<ProjectVO> projectList(ProjectVO projectVO) {
-		return projectDAO.projectList(projectVO);
+	public ProjectVO oneSelectProject(ProjectVO projectVO) {
+		return projectDAO.oneSelectProject(projectVO);
+	}
+	
+	@Override
+	public void createProject(ProjectVO projectVO) {
+		projectDAO.createProject(projectVO);
 	}
 
 	@Override
-	public ProjectVO projectDetail(ProjectVO projectVO) {
-		return projectDAO.projectDetail(projectVO);
-	}
-
-	@Override
-	public void projectCreate(ProjectVO projectVO) {
-		projectDAO.projectCreate(projectVO);
-	}
-
-	@Override
-	public void projectUpdate(ProjectVO projectVO) {
-		projectDAO.projectUpdate(projectVO);
+	public void updateProject(ProjectVO projectVO) {
+		projectDAO.updateProject(projectVO);
 	}
 }

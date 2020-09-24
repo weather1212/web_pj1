@@ -11,20 +11,21 @@ import com.georgia.tk.project.ProjectVO;
 public class ProjectDAO {
 	@Autowired
 	public SqlSessionTemplate mybatis;
-
-	public List<ProjectVO> projectList(ProjectVO projectVO) {
-		return mybatis.selectList("projectDAO.projectList", projectVO);
+	
+	public List<ProjectVO> listSelectProject(ProjectVO projectVO) {
+		return mybatis.selectList("projectDAO.listSelectProject", projectVO);
+	}	
+	
+	public ProjectVO oneSelectProject(ProjectVO projectVO) {
+		return mybatis.selectOne("projectDAO.oneSelectProject", projectVO);
+	}
+	
+	public void createProject(ProjectVO projectVO) {
+		mybatis.insert("projectDAO.createProject", projectVO);
 	}
 
-	public ProjectVO projectDetail(ProjectVO projectVO) {
-		return mybatis.selectOne("projectDAO.projectDetail", projectVO);
+	public void updateProject(ProjectVO projectVO) {
+		mybatis.update("projectDAO.updateProject", projectVO);
 	}
 
-	public void projectCreate(ProjectVO projectVO) {
-		mybatis.insert("projectDAO.projectCreate", projectVO);
-	}
-
-	public void projectUpdate(ProjectVO projectVO) {
-		mybatis.insert("projectDAO.projectUpdate", projectVO);
-	}
 }

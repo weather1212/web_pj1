@@ -12,24 +12,25 @@ public class EmpServiceImpl implements EmpService{
 	@Autowired
 	private EmpDAO empDAO;
 	
+
 	@Override
-	public List<EmpVO> listSelectEmp(EmpVO empVO) {
-		return empDAO.listSelectEmp(empVO);
+	public List<EmpVO> empList(EmpVO empVO) {
+		return empDAO.empList(empVO);
 	}
 
 	@Override
-	public EmpVO oneSelectEmp(EmpVO empVO) {
-		return null;
-	}
-	
-	@Override
-	public void createEmp(EmpVO empVO) {
-		
+	public EmpVO empDetail(EmpVO empVO) {
+		return empDAO.empDetail(empVO);
 	}
 
 	@Override
-	public void updateEmp(EmpVO empVO) {
-		
+	public void empCreate(EmpVO empVO) {
+		empDAO.empCreate(empVO);
+	}
+
+	@Override
+	public void empUpdate(EmpVO empVO) {
+		empDAO.empUpdate(empVO);
 	}
 
 }

@@ -56,37 +56,5 @@ for (int i = 1; i <= cnt; i++) {
 	}
 	%>
 </ul>
-<form action="searchList">
-<table >
-	<thead>
-		<tr>
-			<td>시작날짜</td>
-			<td>마감날짜</td>
-			<td>상태</td>
-			<td>제목</td>
-			<td>내용</td>
-			<td></td>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><input type="date" name="startDate" id="startDate" min="2010-07-01" max="2025-06-30" ></td>
-			<td><input type="date" name="endDate" id="startDate" min="2010-07-01" max="2025-06-30" ></td>
-			<td>
-				<select name="projectState" id="projectState">
-					<option value="">ALL</option>
-					<option value="시작 전">시작 전</option>
-					<option value="진행 중">진행 중</option>
-					<option value="종료">종료</option>
-					<option value="취소">취소</option>
-				</select>
-			</td>
-			<td><input type="text" name="projectName" id="projectName" ></td>
-			<td><input type="text" name="projectContext" id="projectContext" ></td>
-			<td><input type="submit" value="검색"></td>
-		</tr>
-	</tbody>
-</table>
-</form>
 </body>
 </html>

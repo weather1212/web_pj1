@@ -22,41 +22,17 @@ public class ProjectController {
 	private ProjectService projectService;
 	
 	@RequestMapping("/projectList")
-	public String projectList(String page, ProjectVO projectVO, HttpServletRequest request) {
+	public String test(String page, ProjectVO projectVO, HttpServletRequest request) {
 		if(page==null || page.equals("1")) {
 			page="1";
 			projectVO.setPage(0);
 		} else {
 			projectVO.setPage((Integer.parseInt(page)-1)*20);
 		}
-		List<ProjectVO> projectList = projectService.projectList(projectVO);
+		List<ProjectVO> projectList = projectService.listSelectProject(projectVO);
 		request.setAttribute("projectList", projectList);
 		request.setAttribute("pageCnt", 2);
 		request.setAttribute("page", page);
 		return "WEB-INF/views/project/projectList.jsp";
-	}
-	
-	@RequestMapping("/projectCreatePage")
-	public String projectCreatePage(ProjectVO projectVO, HttpServletRequest request) {
-
-		return "WEB-INF/views/project/projectCreate.jsp";
-	}
-	
-	@RequestMapping("/projectCreate")
-	public String projectCreate(ProjectVO projectVO, HttpServletRequest request) {
-
-		return "projectList";
-	}
-	
-	@RequestMapping("/projectSearch")
-	public String projectSearch(String page, ProjectVO projectVO, HttpServletRequest request) {
-
-		return "WEB-INF/views/project/projectSearchList.jsp";
-	}
-	
-	@RequestMapping("/projectDetail")
-	public String projectDetail(ProjectVO projectVO, HttpServletRequest request) {
-
-		return "WEB-INF/views/project/projectDetail.jsp";
 	}
 }

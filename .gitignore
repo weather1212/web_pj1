@@ -29,9 +29,8 @@ apache-tomcat-9.0.34/
 *.class
 
 georgia/src/main/resources/config/database.properties
-georgia/src/main/resources/applicationContext.xml
 
 # Tern plugin
 .tern-project
-
-georgia/pom.xml
+georgia/src/main/resources/applicationContext.xml
+georgia/src/main/resources/applicationContext.xml
