@@ -13,20 +13,19 @@ public class EmpDAO {
 	@Autowired
 	public SqlSessionTemplate mybatis;
 	
-
-	public List<EmpVO> empList(EmpVO empVO) {
-		return mybatis.selectList("empDAO.empList", empVO);
+	public List<EmpVO> listSelectEmp(EmpVO empVO) {
+		return mybatis.selectList("empDAO.listSelectEmp", empVO);
 	}
 
-	public EmpVO empDetail(EmpVO empVO) {
-		return mybatis.selectOne("empDAO.empDetail", empVO);
+	public EmpVO oneSelectEmp(EmpVO empVO) {
+		return null;
 	}
 	
-	public void empCreate(EmpVO empVO) {
-		mybatis.insert("empDAO.empCreate", empVO);
+	public void createEmp(EmpVO empVO) {
+		
 	}
 
-	public void empUpdate(EmpVO empVO) {
-		mybatis.insert("empDAO.empUpdate", empVO);
+	public void updateEmp(EmpVO empVO) {
+		
 	}
 }
