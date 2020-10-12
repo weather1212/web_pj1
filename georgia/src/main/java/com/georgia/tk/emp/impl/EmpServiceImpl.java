@@ -18,8 +18,8 @@ public class EmpServiceImpl implements EmpService{
 	}
 
 	@Override
-	public EmpVO empDetail(EmpVO empVO) {
-		return empDAO.empDetail(empVO);
+	public EmpVO empDetail(int empId) {
+		return empDAO.empDetail(empId);
 	}
 
 	@Override
@@ -30,6 +30,12 @@ public class EmpServiceImpl implements EmpService{
 	@Override
 	public void empUpdate(EmpVO empVO) {
 		empDAO.empUpdate(empVO);		
+	}
+
+	@Override
+	public void empDelete(int empId) {
+		empDAO.empDelete(empId);
+		
 	}
 
 }

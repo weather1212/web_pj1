@@ -6,7 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.georgia.tk.emp.EmpService;
 import com.georgia.tk.emp.EmpVO;
@@ -14,6 +16,7 @@ import com.georgia.tk.profit.ProfitService;
 import com.georgia.tk.project.ProjectService;
 
 @Controller
+//@RequestMapping("/emp/*")
 public class EmpController {
 	
 	@Autowired
@@ -35,12 +38,39 @@ public class EmpController {
 	}
 	
 	@RequestMapping("/empDetail")
-	public String empDetail(EmpVO empVO, HttpServletRequest request) {
-		
-
+	public String empDetail(@RequestParam int empId, HttpServletRequest request) {
+		EmpVO empVO = empService.empDetail(empId);
+		request.setAttribute("empVO", empVO);
 		
 		return "WEB-INF/views/emp/empDetail.jsp";
 	}
+	
+	@RequestMapping("/empUpdateAction")
+	public String empUpdateAction(@ModelAttribute EmpVO empVO) {	
+		empService.empUpdate(empVO);
+		
+		return "redirect:/empList";
+	}
+	@RequestMapping("/empDeleteAction")
+	public String empDeleteAction(@RequestParam int empId) {	
+		empService.empDelete(empId);
+		
+		return "redirect:/empList";
+	}
+	
+//	@RequestMapping("/empDetailAction")
+//	public String empDetailAction(EmpVO empVO, HttpServletRequest request) {
+//		
+//		
+//		empVO.setEmp_id((Integer) request.getParameter("emp_id"));
+//		empService.empDetail(empVO);
+//		
+//		
+//		
+//		return "WEB-INF/views/emp/empDetail.jsp";
+//	}
+
+	
 	
 	@RequestMapping("/empCreatePage")
 	public String empCreatePage(EmpVO empVO, HttpServletRequest request) {

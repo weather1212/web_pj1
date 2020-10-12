@@ -14,6 +14,7 @@
 	<select id="projectList" resultMap="projectResult">
 		SELECT * 
 		FROM project
+<!-- 		WHERE p_name LIKE #{p_name} AND p_content LIKE #{p_content} -->
 		ORDER BY p_id
 		LIMIT #{page}, 20
 	</select>
@@ -21,7 +22,7 @@
 	<select id="projectDetail" resultType="project">
 		SELECT *
 		FROM project
-		WHERE p_id = #{p_id}
+		WHERE p_id = #{p_id} 
 	</select>
 
 	<insert id="projectCreate" parameterType="project">

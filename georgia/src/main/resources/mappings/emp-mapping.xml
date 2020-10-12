@@ -16,6 +16,7 @@
 	<select id="empList" resultMap="empResult">
 		SELECT *
 		FROM emp
+<!-- 		WHERE emp_name LIKE #{emp_name} AND emp_id LIKE #{emp_id} AND -->
 		ORDER BY emp_id
 		LIMIT #{page}, 20
 	</select>
@@ -33,7 +34,13 @@
 	
 	<update id="empUpdate" parameterType="emp">
 		UPDATE emp
-		SET emp_name = #{emp_name}, emp_department = #{emp_department}, emp_position = #{emp_position}, emp_profit = #{emp_profit}, emp_salary = #{emp_salary}, emp_state = #{emp_state}
+		SET emp_department = #{emp_department}, emp_position = #{emp_position}, emp_profit = #{emp_profit}, emp_salary = #{emp_salary}
+		WHERE emp_id = #{emp_id} 
+	</update>
+	
+	<update id="empDelete" parameterType="int">
+		UPDATE emp
+		SET emp_state = "퇴사"
 		WHERE emp_id = #{emp_id} 
 	</update>
 </mapper>

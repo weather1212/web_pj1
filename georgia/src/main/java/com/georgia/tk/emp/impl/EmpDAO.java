@@ -17,8 +17,8 @@ public class EmpDAO {
 		return mybatis.selectList("empDAO.empList", empVO);
 	}
 
-	public EmpVO empDetail(EmpVO empVO) {
-		return mybatis.selectOne("empDAO.empDetail", empVO);
+	public EmpVO empDetail(int empId) {
+		return mybatis.selectOne("empDAO.empDetail", empId);
 	}
 	
 	public void empCreate(EmpVO empVO) {
@@ -27,5 +27,9 @@ public class EmpDAO {
 
 	public void empUpdate(EmpVO empVO) {
 		mybatis.insert("empDAO.empUpdate", empVO);
+	}
+
+	public void empDelete(int empId) {
+		mybatis.insert("empDAO.empDelete", empId);		
 	}
 }

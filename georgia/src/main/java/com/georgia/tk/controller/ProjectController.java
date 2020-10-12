@@ -38,7 +38,8 @@ public class ProjectController {
 	
 	@RequestMapping("/projectCreatePage")
 	public String projectCreatePage(ProjectVO projectVO, HttpServletRequest request) {
-
+		projectVO.getP_id();
+		
 		return "WEB-INF/views/project/projectCreate.jsp";
 	}
 	
