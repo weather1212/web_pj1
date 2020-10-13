@@ -9,6 +9,7 @@
 
 	<security:http>
 		<security:intercept-url pattern="/**" access="hasRole('ROLE_MEMBER')" />
+		<security:csrf disabled="true"/>
 		<security:form-login />
 <!-- 		<security:logout logout-url="/logout" invalidate-session="true" logout-success-url="/login?status=logout" /> -->
 	</security:http>
@@ -17,6 +18,7 @@
 		<security:authentication-provider>
 			<security:user-service>
 				<security:user name="admin" password="{noop}admin" authorities="ROLE_MEMBER" />
+				
 			</security:user-service>
 		</security:authentication-provider>
 	</security:authentication-manager>

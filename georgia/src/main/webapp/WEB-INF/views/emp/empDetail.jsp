@@ -27,22 +27,22 @@
 
 				if (empDepartment == "") {
 					alert("해당 사원의 부서를 입력하세요.");
-					document.detailForm.empDepartment.focus();
+					$("#emp_department").focus();
 					return;
 				}
 				if (empPosition == "") {
 					alert("해당 사원의 직책을 입력하세요.");
-					document.detailForm.empPosition.focus();
+					$("#emp_position").focus();
 					return;
 				}
 				if (empProfit == "") {
 					alert("해당 사원의 실적을 입력하세요.");
-					document.detailForm.empProfit.focus();
+					$("#emp_profit").focus();
 					return;
 				}
 				if (empSalary == "") {
 					alert("해당 사원의 급여를 입력하세요.");
-					document.detailForm.empSalary.focus();
+					$("#emp_salary").focus();
 					return;
 				}
 				document.detailForm.action = "${path}/empUpdateAction";

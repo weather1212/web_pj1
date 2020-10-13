@@ -10,7 +10,7 @@
 <%@ include file="../include/include.jsp" %>
 </head>
 <body>
-	<button>사원 추가</button>
+	<a href="empCreatePage"><button>사원 추가</button></a>
 	<table>
 		<thead>
 			<tr>
