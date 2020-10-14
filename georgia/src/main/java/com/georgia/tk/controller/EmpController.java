@@ -30,10 +30,8 @@ public class EmpController {
 		} else {
 			empVO.setPage((Integer.parseInt(page) - 1) * 20);
 		}
-		System.out.println("검색 게시물 페이지 : " + page);
+		System.out.println("현재 게시물 페이지 : " + page);
 		
-		List<EmpVO> empList = empService.empList(empVO);
-
 		int empListCount = empService.empListCount();
 		System.out.println("총 게시물 수 : " + empListCount);
 
@@ -43,6 +41,8 @@ public class EmpController {
 		} else {
 			pageCnt = empListCount / 20 + 1;
 		}
+		
+		List<EmpVO> empList = empService.empList(empVO);
 
 		request.setAttribute("empList", empList);
 		request.setAttribute("pageCnt", pageCnt);
