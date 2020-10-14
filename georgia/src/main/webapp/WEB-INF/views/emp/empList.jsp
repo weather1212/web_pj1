@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>사원 관리</title>
-<%@ include file="../include/include.jsp" %>
+<%@ include file="../include/include.jsp"%>
 </head>
 <body>
 	<a href="empCreatePage"><button>사원 추가</button></a>
@@ -61,29 +61,30 @@
 			}
 		%>
 	</ul>
-	<form action="searchList">
-<table >
-	<thead>
-		<tr>
-			<td>사원 번호</td>
-			<td>사원명</td>
-			<td>부서</td>
-			<td>직책</td>
-			<td>입사일자</td>
-			<td></td>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><input type="text" name="empId" id="empId"></td>
-			<td><input type="text" name="empName" id="empName" ></td>
-			<td><input type="text" name="empDepartment" id="empDepartment" ></td>
-			<td><input type="text" name="empPosition" id="empPosition" ></td>
-			<td><input type="date" name="empHiredate" id="empHiredate" min="2010-07-01" max="2025-06-30" ></td>
-			<td><input type="submit" value="검색"></td>
-		</tr>
-	</tbody>
-</table>
-</form>
+	<form action="empSearch">
+		<table>
+			<thead>
+				<tr>
+					<td>사원 번호</td>
+					<td>사원명</td>
+					<td>부서</td>
+					<td>직책</td>
+					<td>입사일자</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="text" name="empId" id="empId"></td>
+					<td><input type="text" name="empName" id="empName"></td>
+					<td><input type="text" name="empDepartment" id="empDepartment"></td>
+					<td><input type="text" name="empPosition" id="empPosition"></td>
+					<td><input type="date" name="empHiredate" id="empHiredate" min="2010-07-01"
+							max="2025-06-30"></td>
+					<td><input type="submit" value="검색"></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
 </body>
 </html>
