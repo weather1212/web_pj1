@@ -4,14 +4,51 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>사원 관리</title>
-<%@ include file="../include/include.jsp"%>
+	<meta charset="UTF-8">
+	<title>사원 관리</title>
+	<%@ include file="../include/include.jsp" %>
+	<link rel="stylesheet" href="${path }/resources/css/stcss.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-	<a href="empCreatePage"><button>사원 추가</button></a>
-	<table>
+	<nav id="navbar">
+		<div class="navbar__name">오뉴이노베이션</div>
+		<ul class="navbar__menu">
+			<li class="navbar__menu__item">인사시스템</li>
+			<li class="navbar__menu__item">업무시스템</li>
+		</ul>
+	</nav>
+
+	<button class="emp__add">사원 추가</button>
+	<form action="empSearch">
+		<table id="emp__search__table">
+			<thead>
+				<tr>
+					<td>사원 번호</td>
+					<td>사원명</td>
+					<td>부서</td>
+					<td>직책</td>
+					<td>입사일자</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="text" name="empId" id="empId" class="s__emp"></td>
+					<td><input type="text" name="empName" id="empName" class="s__emp"></td>
+					<td><input type="text" name="empDepartment" id="empDepartment" class="s__emp"></td>
+					<td><input type="text" name="empPosition" id="empPosition" class="s__emp"></td>
+					<td><input type="date" name="empHiredate" id="empHiredate" min="2010-07-01" max="2025-06-30"
+							class="s__emp"></td>
+					<td><input type="submit" class="search__btn" value="검색"></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+	<table id="emp__table">
 		<thead>
 			<tr>
 				<th>사원번호</th>
@@ -19,10 +56,6 @@
 				<th>부서</th>
 				<th>직책</th>
 				<th>입사일자</th>
-
-				<th>실적</th>
-				<th>급여</th>
-				<th>재직여부</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -33,15 +66,11 @@
 					<td>${empList.emp_department}</td>
 					<td>${empList.emp_position}</td>
 					<td>${empList.emp_hiredate}</td>
-
-					<td>${empList.emp_profit}</td>
-					<td>${empList.emp_salary}</td>
-					<td>${empList.emp_state}</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-	<ul>
+	<ul class="content__count">
 		<%
 			int cnt = Integer.parseInt(String.valueOf(request.getAttribute("pageCnt")));
 			int cur = Integer.parseInt(String.valueOf(request.getAttribute("page")));
@@ -55,36 +84,12 @@
 			} else {
 		%>
 		<li><a href="empList?page=<%=i%>"> <span><%=i%></span>
-		</a></li>
+			</a></li>
 		<%
 			}
 			}
 		%>
 	</ul>
-	<form action="empSearch">
-		<table>
-			<thead>
-				<tr>
-					<td>사원 번호</td>
-					<td>사원명</td>
-					<td>부서</td>
-					<td>직책</td>
-					<td>입사일자</td>
-					<td></td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><input type="text" name="empId" id="empId"></td>
-					<td><input type="text" name="empName" id="empName"></td>
-					<td><input type="text" name="empDepartment" id="empDepartment"></td>
-					<td><input type="text" name="empPosition" id="empPosition"></td>
-					<td><input type="date" name="empHiredate" id="empHiredate" min="2010-07-01"
-							max="2025-06-30"></td>
-					<td><input type="submit" value="검색"></td>
-				</tr>
-			</tbody>
-		</table>
-	</form>
 </body>
+
 </html>
