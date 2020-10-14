@@ -10,7 +10,7 @@
 		<result property="emp_hiredate" column="emp_hiredate" />
 		<result property="emp_profit" column="emp_profit" />
 		<result property="emp_salary" column="emp_salary" />
-<!-- 		<result property="emp_state" column="emp_state" /> -->
+		<!-- <result property="emp_state" column="emp_state" /> -->
 	</resultMap>
 
 	<select id="empList" resultMap="empResult">
@@ -21,6 +21,30 @@
 		LIMIT #{page}, 20
 	</select>
 
+	<select id="empSearchList" parameterType="map" resultMap="empResult">
+		SELECT *
+		FROM emp
+		WHERE emp_id LIKE
+		CONCAT('%',#{empId},'%') AND emp_name LIKE CONCAT('%',#{empName},'%') AND emp_department LIKE
+		CONCAT('%',#{empDepartment},'%') AND emp_position LIKE CONCAT('%',#{empPosition},'%') AND
+		emp_hiredate LIKE CONCAT('%',#{empHiredate},'%')
+		ORDER BY emp_id
+		LIMIT #{page}, 20
+	</select>
+
+	<select id="empListCount" resultType="int">
+		SELECT COUNT(*)
+		FROM emp
+	</select>
+
+	<select id="empSearchCount" parameterType="map" resultType="int">
+		SELECT COUNT(*)
+		FROM emp
+		WHERE emp_id LIKE CONCAT('%',#{empId},'%') AND emp_name LIKE CONCAT('%',#{empName},'%') AND
+		emp_department LIKE CONCAT('%',#{empDepartment},'%') AND emp_position LIKE
+		CONCAT('%',#{empPosition},'%') AND emp_hiredate LIKE CONCAT('%',#{empHiredate},'%')
+	</select>
+
 	<select id="empDetail" resultType="emp">
 		SELECT *
 		FROM emp
@@ -29,11 +53,12 @@
 
 	<insert id="empCreate" parameterType="emp">
 		INSERT INTO emp(emp_id, emp_name, emp_department,
-		emp_position, emp_hiredate, emp_profit, emp_salary)
-		VALUES(#{emp_id}, #{emp_name}, #{emp_department}, #{emp_position}, #{emp_hiredate}, #{emp_profit }, #{emp_salary})
-		<!-- VALUES((SELECT
-		IFNULL(MAX(emp_id)+1,1) FROM project ALIAS_FOR_SUBQUERY), #{emp_name}, #{emp_department},
-		#{emp_position}, sysdate, #{emp_pfit}, #{emp_salary}) -->
+		emp_position, emp_hiredate, emp_profit,
+		emp_salary)
+		VALUES(#{emp_id}, #{emp_name}, #{emp_department}, #{emp_position}, #{emp_hiredate},
+		#{emp_profit }, #{emp_salary})
+		<!-- VALUES((SELECT IFNULL(MAX(emp_id)+1,1) FROM project ALIAS_FOR_SUBQUERY), #{emp_name}, #{emp_department}, 
+			#{emp_position}, sysdate, #{emp_pfit}, #{emp_salary}) -->
 	</insert>
 
 	<update id="empUpdate" parameterType="emp">
