@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>사원 상세조회</title>
+<title>프로젝트 상세조회</title>
 <%@ include file="../include/include.jsp"%>
 <link rel="stylesheet" href="${path }/resources/css/stcss.css" />
 <link
@@ -81,30 +81,30 @@
 					<tbody>
 						<tr>
 							<td><label for="project_id">프로젝트 번호</label> <input type="text"
-									id="project_id" class="e__d__t__type" name="project_id"
+									id="project_id" class="e__d__t__type" name="p_id"
 									value="${projectVO.p_id}" readonly="readonly" /></td>
 						</tr>
 						<tr>
 							<td><label for="project_name">프로젝트명</label> <input type="text"
-									id="project_name" class="e__d__t__type" name="project_name"
+									id="project_name" class="e__d__t__type" name="p_name"
 									value="${projectVO.p_name}" /></td>
 						</tr>
 						<tr>
-							<td><label for="project_content">프로젝트 내용</label> <textarea rows="30" cols="30"
-									id="project_content" name="project_content">${projectVO.p_content}</textarea></td>
+							<td><label for="project_content">프로젝트 내용</label> <textarea rows="10" cols="50"
+									id="project_content" name="p_content">${projectVO.p_content}</textarea></td>
 						</tr>
 						<tr>
-							<td><label for="project_state">프로젝트 상태</label> <input type="text"
-									class="e__d__t__type" id="project_state" name="project_state"
-									value="${projectVO.p_state}" /></td>
-						</tr>
-						<tr>
-							<td><label for="project_start">시작 날짜</label> <input type="date" name="projectStart" id="projectStart" min="2010-07-01"
+							<td><label for="project_start">시작 날짜</label> <input type="date" name="pStart" id="projectStart" min="2010-07-01"
 							max="2025-06-30" class="s__pro" value="${projectVO.p_start}" >
 						</tr>
 						<tr>
-							<td><label for="project_end">종료 날짜</label> <input type="date" name="projectEnd" id="projectEnd" min="2010-07-01"
+							<td><label for="project_end">종료 날짜</label> <input type="date" name="pEnd" id="projectEnd" min="2010-07-01"
 							max="2025-06-30" class="s__pro" value="${projectVO.p_end}" >
+						</tr>
+						<tr>
+							<td><label for="project_state">프로젝트 상태</label> <input type="text"
+									class="e__d__t__type" id="project_state" name="p_state"
+									value="${projectVO.p_state}" /></td>
 						</tr>
 					</tbody>
 				</table>
