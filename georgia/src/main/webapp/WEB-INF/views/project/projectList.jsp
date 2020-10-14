@@ -20,7 +20,7 @@
 		<%@ include file="../include/header.jsp"%>
 	</header>
 	<a href="projectCreatePage"><button class="pro__add">프로젝트 추가</button></a>
-	<form action="searchList">
+	<form action="projectSearch">
 		<table id="pro__search__table">
 			<thead>
 				<tr>
