@@ -9,8 +9,8 @@ public class ProjectVO {
 	int p_id;
 	String p_name;
 	String p_content;
-	Date p_start;
-	Date p_end;
+	String p_start;
+	String p_end;
 	String p_state;
 	int page;
 }
