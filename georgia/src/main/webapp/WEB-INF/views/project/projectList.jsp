@@ -34,9 +34,9 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><input type="date" name="startDate" id="startDate" min="2010-07-01"
+					<td><input type="date" name="projectStart" id="projectStart" min="2010-07-01"
 							max="2025-06-30" class="s__pro"></td>
-					<td><input type="date" name="endDate" id="startDate" min="2010-07-01"
+					<td><input type="date" name="projectEnd" id="projectEnd" min="2010-07-01"
 							max="2025-06-30" class="s__pro"></td>
 					<td><select name="projectState" id="projectState" class="s__pro">
 							<option value="">ALL</option>
@@ -46,7 +46,7 @@
 							<option value="취소">취소</option>
 					</select></td>
 					<td><input type="text" name="projectName" id="projectName" class="s__pro"></td>
-					<td><input type="text" name="projectContext" id="projectContext" class="s__pro"></td>
+					<td><input type="text" name="projectContent" id="projectContent" class="s__pro"></td>
 					<td><input type="submit" class="search__btn" value="검색"></td>
 				</tr>
 			</tbody>
