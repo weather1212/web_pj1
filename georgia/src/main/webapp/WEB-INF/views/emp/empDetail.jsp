@@ -58,14 +58,9 @@
 </script>
 </head>
 <body>
-	<nav id="navbar">
-      <div class="navbar__name">오뉴이노베이션</div>
-        <ul class="navbar__menu">
-          <li class="navbar__menu__item">인사시스템</li>
-          <li class="navbar__menu__item">업무시스템</li>
-        </ul>
-    </nav>
-    
+	<header>
+		<%@ include file="../include/header.jsp"%>
+	</header>
 	<div id="root">
 		<header>
 			<h1>사원 정보 상세 관리</h1>

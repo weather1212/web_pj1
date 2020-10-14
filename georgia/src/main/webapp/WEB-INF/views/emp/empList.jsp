@@ -6,23 +6,20 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<title>사원 관리</title>
-	<%@ include file="../include/include.jsp" %>
-	<link rel="stylesheet" href="${path }/resources/css/stcss.css" />
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<title>사원 관리</title>
+<%@ include file="../include/include.jsp"%>
+<link rel="stylesheet" href="${path }/resources/css/stcss.css" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+	rel="stylesheet" />
 </head>
 
 <body>
-	<nav id="navbar">
-		<div class="navbar__name">오뉴이노베이션</div>
-		<ul class="navbar__menu">
-			<li class="navbar__menu__item">인사시스템</li>
-			<li class="navbar__menu__item">업무시스템</li>
-		</ul>
-	</nav>
-
-	<button class="emp__add">사원 추가</button>
+	<header>
+		<%@ include file="../include/header.jsp"%>
+	</header>
+	<a href="empCreatePage"><button class="emp__add">사원 추가</button></a>
 	<form action="empSearch">
 		<table id="emp__search__table">
 			<thead>
@@ -41,8 +38,8 @@
 					<td><input type="text" name="empName" id="empName" class="s__emp"></td>
 					<td><input type="text" name="empDepartment" id="empDepartment" class="s__emp"></td>
 					<td><input type="text" name="empPosition" id="empPosition" class="s__emp"></td>
-					<td><input type="date" name="empHiredate" id="empHiredate" min="2010-07-01" max="2025-06-30"
-							class="s__emp"></td>
+					<td><input type="date" name="empHiredate" id="empHiredate" min="2010-07-01"
+							max="2025-06-30" class="s__emp"></td>
 					<td><input type="submit" class="search__btn" value="검색"></td>
 				</tr>
 			</tbody>
@@ -84,7 +81,7 @@
 			} else {
 		%>
 		<li><a href="empList?page=<%=i%>"> <span><%=i%></span>
-			</a></li>
+		</a></li>
 		<%
 			}
 			}
