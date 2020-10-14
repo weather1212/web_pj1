@@ -1,6 +1,7 @@
 package com.georgia.tk.emp.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,11 @@ public class EmpServiceImpl implements EmpService{
 		return empDAO.empList(empVO);
 	}
 
+	@Override
+	public List<EmpVO> empList(Map<String, Object> empSearchMap) {
+		return empDAO.empList(empSearchMap);
+	}
+	
 	@Override
 	public EmpVO empDetail(int empId) {
 		return empDAO.empDetail(empId);
@@ -36,6 +42,16 @@ public class EmpServiceImpl implements EmpService{
 	public void empDelete(int empId) {
 		empDAO.empDelete(empId);
 		
+	}
+
+	@Override
+	public int empListCount() {
+		return empDAO.empListCount();
+	}
+
+	@Override
+	public int empSearchCount(Map<String, Object> empSearchMap) {
+		return empDAO.empSearchCount(empSearchMap);
 	}
 
 }
