@@ -1,6 +1,7 @@
 package com.georgia.tk.project.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,8 +19,13 @@ public class ProjectServiceImpl implements ProjectService{
 	}
 
 	@Override
-	public ProjectVO projectDetail(ProjectVO projectVO) {
-		return projectDAO.projectDetail(projectVO);
+	public List<ProjectVO> projectList(Map<String, Object> projectSearchMap) {
+		return projectDAO.projectList(projectSearchMap);
+	}
+	
+	@Override
+	public ProjectVO projectDetail(int projectId) {
+		return projectDAO.projectDetail(projectId);
 	}
 
 	@Override
@@ -30,5 +36,20 @@ public class ProjectServiceImpl implements ProjectService{
 	@Override
 	public void projectUpdate(ProjectVO projectVO) {
 		projectDAO.projectUpdate(projectVO);
+	}
+
+	@Override
+	public void projectDelete(int projectId) {
+		projectDAO.projectDelete(projectId);
+	}
+
+	@Override
+	public int projectListCount() {
+		return projectDAO.projectListCount();
+	}
+
+	@Override
+	public int projectSearchCount(Map<String, Object> projectSearchMap) {
+		return projectDAO.projectSearchCount(projectSearchMap);
 	}
 }
