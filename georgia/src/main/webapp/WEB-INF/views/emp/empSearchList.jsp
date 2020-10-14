@@ -4,89 +4,87 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <head>
 <meta charset="UTF-8">
-<title>프로젝트 관리</title>
+<title>사원 관리</title>
+<%@ include file="../include/include.jsp"%>
 </head>
 <body>
-<button>프로젝트 추가</button>
-<table>
-	<thead>
-		<tr>
-			<th>프로젝트번호</th>
-			<th>프로젝트명</th>
-			<th>시작날짜</th>
-			<th>종료날짜</th>
-			<th>상태</th>
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach items="${projectList}" var="projectList">
+	<a href="empCreatePage"><button>사원 추가</button></a>
+	<table>
+		<thead>
 			<tr>
-				<td>${projectList.p_id}</td>
-				<td>${projectList.p_name}</td>
-				<td>${projectList.p_start}</td>
-				<td>${projectList.p_end}</td>
-				<td>${projectList.p_state}</td>
+				<th>사원번호</th>
+				<th>사원명</th>
+				<th>부서</th>
+				<th>직책</th>
+				<th>입사일자</th>
+
+				<th>실적</th>
+				<th>급여</th>
+				<th>재직여부</th>
 			</tr>
-		</c:forEach>
-	</tbody>
-</table>
-<ul>
-<%
-int cnt = Integer.parseInt(String.valueOf(request.getAttribute("pageCnt")));
-int cur = Integer.parseInt(String.valueOf(request.getAttribute("page")));
-%>
-<%
-for (int i = 1; i <= cnt; i++) {
-	if (i == cur) {
-	%>
-	<li class="active">
-	<span><%=i%></span>
-	</li>
-	<%
-	} else {
-	%>
-	<li><a href="projectList?page=<%=i%>">
-	<span><%=i%></span>
-	</a></li>
-	<%
-	}
-	}
-	%>
-</ul>
-<form action="searchList">
-<table >
-	<thead>
-		<tr>
-			<td>시작날짜</td>
-			<td>마감날짜</td>
-			<td>상태</td>
-			<td>제목</td>
-			<td>내용</td>
-			<td></td>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><input type="date" name="startDate" id="startDate" min="2010-07-01" max="2025-06-30" ></td>
-			<td><input type="date" name="endDate" id="startDate" min="2010-07-01" max="2025-06-30" ></td>
-			<td>
-				<select name="projectState" id="projectState">
-					<option value="">ALL</option>
-					<option value="시작 전">시작 전</option>
-					<option value="진행 중">진행 중</option>
-					<option value="종료">종료</option>
-					<option value="취소">취소</option>
-				</select>
-			</td>
-			<td><input type="text" name="projectName" id="projectName" ></td>
-			<td><input type="text" name="projectContext" id="projectContext" ></td>
-			<td><input type="submit" value="검색"></td>
-		</tr>
-	</tbody>
-</table>
-</form>
+		</thead>
+		<tbody>
+			<c:forEach items="${empList}" var="empList">
+				<tr>
+					<td>${empList.emp_id}</td>
+					<td><a href="empDetail?empId=${empList.emp_id}">${empList.emp_name}</a></td>
+					<td>${empList.emp_department}</td>
+					<td>${empList.emp_position}</td>
+					<td>${empList.emp_hiredate}</td>
+
+					<td>${empList.emp_profit}</td>
+					<td>${empList.emp_salary}</td>
+					<td>${empList.emp_state}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	<ul>
+		<%
+			int cnt = Integer.parseInt(String.valueOf(request.getAttribute("pageCnt")));
+			int cur = Integer.parseInt(String.valueOf(request.getAttribute("page")));
+		%>
+		<%
+			for (int i = 1; i <= cnt; i++) {
+				if (i == cur) {
+		%>
+		<li class="active"><span><%=i%></span></li>
+		<%
+			} else {
+		%>
+		<li><a href="empSearch?page=<%=i%>&empId=${searchEmpId }&empName=${searchEmpName }&empDepartment=${searchEmpDepartment }&empPosition=${searchEmpPosition }&empHiredate=${searchEmpHiredate }"> <span><%=i%></span>
+		</a></li>
+		<%
+			}
+			}
+		%>
+	</ul>
+	<form action="empSearch">
+		<table>
+			<thead>
+				<tr>
+					<td>사원 번호</td>
+					<td>사원명</td>
+					<td>부서</td>
+					<td>직책</td>
+					<td>입사일자</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="text" name="empId" id="empId" value="${searchEmpId }"></td>
+					<td><input type="text" name="empName" id="empName" value="${searchEmpName }"></td>
+					<td><input type="text" name="empDepartment" id="empDepartment" value="${searchEmpDepartment }"></td>
+					<td><input type="text" name="empPosition" id="empPosition" value="${searchEmpPosition }"></td>
+					<td><input type="date" name="empHiredate" id="empHiredate" min="2010-07-01"
+							max="2025-06-30" value="${searchEmpHiredate }"></td>
+					<td><input type="submit" value="검색"></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
 </body>
 </html>
