@@ -5,6 +5,10 @@
 <meta charset="UTF-8">
 <title>사원 추가</title>
 <%@ include file="../include/include.jsp"%>
+<link rel="stylesheet" href="${path }/resources/css/stcss.css" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+	rel="stylesheet" />
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#btnList").click(function() {
@@ -23,7 +27,6 @@
 
 				if (empId == "") {
 					alert("해당 사원의 사번을 입력하세요.");
-					// 					document.detailForm.empId.focus();
 					$("#emp_id").focus();
 					return;
 				}
@@ -67,6 +70,9 @@
 </script>
 </head>
 <body>
+	<header>
+		<%@ include file="../include/header.jsp"%>
+	</header>
 	<div id="root">
 		<header>
 			<h1>인사 관리</h1>
@@ -97,8 +103,8 @@
 									id="emp_position" name="emp_position" /></td>
 						</tr>
 						<tr>
-							<td><label for="emp_hiredate">입사일자</label> <input type="date" min="2010-07-01" max="2025-06-30" name="emp_hiredate">
-								<%-- <fmt:formatDate value="${empVO.emp_hiredate}" pattern="yyyy-MM-dd" /></td> --%>
+							<td><label for="emp_hiredate">입사일자</label> <input type="date" min="2010-07-01"
+									max="2025-06-30" name="emp_hiredate"> <%-- <fmt:formatDate value="${empVO.emp_hiredate}" pattern="yyyy-MM-dd" /></td> --%>
 						</tr>
 						<tr>
 							<td><label for="emp_profit">업무 실적</label> <input type="text" id="emp_profit"
