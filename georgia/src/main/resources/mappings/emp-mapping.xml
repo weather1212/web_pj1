@@ -16,7 +16,6 @@
 	<select id="empList" resultMap="empResult">
 		SELECT *
 		FROM emp
-		<!-- WHERE emp_name LIKE #{emp_name} AND emp_id LIKE #{emp_id} AND -->
 		ORDER BY emp_id
 		LIMIT #{page}, 20
 	</select>
