@@ -39,14 +39,46 @@
 					<td><input type="date" name="projectEnd" id="projectEnd" min="2010-07-01"
 							max="2025-06-30" value="${searchProjectEnd }" class="s__pro"></td>
 					<td><select name="projectState" id="projectState" class="s__pro">
-							<option value="">ALL</option>
-							<option value="시작 전">시작 전</option>
-							<option value="진행 중">진행 중</option>
-							<option value="종료">종료</option>
-							<option value="취소">취소</option>
+							<c:if test="${searchProjectState == 'ALL'}">
+								<option value="" selected>ALL</option>
+								<option value="시작 전">시작 전</option>
+								<option value="진행 중">진행 중</option>
+								<option value="종료">종료</option>
+								<option value="취소">취소</option>
+							</c:if>
+							<c:if test="${searchProjectState == '시작 전'}">
+								<option value="">ALL</option>
+								<option value="시작 전" selected>시작 전</option>
+								<option value="진행 중">진행 중</option>
+								<option value="종료">종료</option>
+								<option value="취소">취소</option>
+							</c:if>
+							<c:if test="${searchProjectState == '진행 중'}">
+								<option value="">ALL</option>
+								<option value="시작 전">시작 전</option>
+								<option value="진행 중" selected>진행 중</option>
+								<option value="종료">종료</option>
+								<option value="취소">취소</option>
+							</c:if>
+							<c:if test="${searchProjectState == '종료'}">
+								<option value="">ALL</option>
+								<option value="시작 전">시작 전</option>
+								<option value="진행 중">진행 중</option>
+								<option value="종료" selected>종료</option>
+								<option value="취소">취소</option>
+							</c:if>
+							<c:if test="${searchProjectState == '취소'}">
+								<option value="">ALL</option>
+								<option value="시작 전">시작 전</option>
+								<option value="진행 중">진행 중</option>
+								<option value="종료">종료</option>
+								<option value="취소" selected>취소</option>
+							</c:if>
 					</select></td>
-					<td><input type="text" name="projectName" id="projectName" value="${searchProjectName }" class="s__pro"></td>
-					<td><input type="text" name="projectContent" id="projectContent" value="${searchProjectContent }" class="s__pro"></td>
+					<td><input type="text" name="projectName" id="projectName"
+							value="${searchProjectName }" class="s__pro"></td>
+					<td><input type="text" name="projectContent" id="projectContent"
+							value="${searchProjectContent }" class="s__pro"></td>
 					<td><input type="submit" class="search__btn" value="검색"></td>
 				</tr>
 			</tbody>
@@ -87,7 +119,9 @@
 		<%
 			} else {
 		%>
-		<li><a href="projectSearch?page=<%=i%>&projectState=${searchProjectState }&projectName=${searchProjectName }&projectContent=${searchProjectContent }&projectStart=${searchProjectStart }&projectEnd=${searchProjectEnd }"> <span><%=i%></span>
+		<li><a
+			href="projectSearch?page=<%=i%>&projectState=${searchProjectState }&projectName=${searchProjectName }&projectContent=${searchProjectContent }&projectStart=${searchProjectStart }&projectEnd=${searchProjectEnd }">
+				<span><%=i%></span>
 		</a></li>
 		<%
 			}
