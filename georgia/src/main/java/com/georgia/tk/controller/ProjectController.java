@@ -112,8 +112,8 @@ public class ProjectController {
 	}
 
 	@RequestMapping("/projectDeleteAction")
-	public String projectDeleteAction(@RequestParam int project_id) {
-		projectService.projectDelete(project_id);
+	public String projectDeleteAction(@RequestParam int p_id) {
+		projectService.projectDelete(p_id);
 
 		return "redirect:/projectList";
 	}
