@@ -54,7 +54,7 @@
 					$("#project_state").focus();
 					return;
 				}
-				document.detailForm.action = "${path}/projectUpdateAction";
+				document.detailForm.action = "${path}/projectCreate";
 				document.detailForm.submit();
 
 			}
@@ -79,28 +79,37 @@
 				<table class="pro__info__table">
 					<tbody>
 						<tr>
-							<td><label for="project_id" class="p__i__t__label">프로젝트 번호</label> <input type="text"
-									id="project_id" class="p__i__t__type" name="p_id" /></td>
+							<td><label for="project_id" class="p__i__t__label">프로젝트 번호</label> <input
+									type="text" id="project_id" class="p__i__t__type" name="p_id" /></td>
 						</tr>
 						<tr>
-							<td><label for="project_name" class="p__i__t__label">프로젝트명</label> <input type="text"
-									id="project_name" class="p__i__t__type" name="p_name" /></td>
+							<td><label for="project_name" class="p__i__t__label">프로젝트명</label> <input
+									type="text" id="project_name" class="p__i__t__type" name="p_name" /></td>
 						</tr>
 						<tr>
-							<td><label for="project_content" class="p__i__t__label">프로젝트 내용</label> <textarea rows="10" cols="50"
-									id="project_content" class="p__i__t__content" name="p_content"></textarea></td>
+							<td><label for="project_content" class="p__i__t__label">프로젝트 내용</label> <textarea
+									rows="10" cols="50" id="project_content" class="p__i__t__content"
+									name="p_content"></textarea></td>
 						</tr>
 						<tr>
-							<td><label for="project_start" class="p__i__t__label">시작 날짜</label> <input type="date" name="pStart" id="projectStart" class="p__i__t__date" min="2010-07-01"
-							max="2025-06-30" class="s__pro" >
+							<td><label for="project_start" class="p__i__t__label">시작 날짜</label> <input
+									type="date" name="p_start" id="project_start" class="p__i__t__date"
+									min="2010-07-01" max="2025-06-30" class="s__pro">
 						</tr>
 						<tr>
-							<td><label for="project_end" class="p__i__t__label">종료 날짜</label> <input type="date" name="pEnd" id="projectEnd" class="p__i__t__date" min="2010-07-01"
-							max="2025-06-30" class="s__pro" >
+							<td><label for="project_end" class="p__i__t__label">종료 날짜</label> <input
+									type="date" name="p_end" id="project_end" class="p__i__t__date" min="2010-07-01"
+									max="2025-06-30" class="s__pro">
 						</tr>
 						<tr>
-							<td><label for="project_state" class="p__i__t__label">프로젝트 상태</label> <input type="text"
-									class="p__i__t__type" id="project_state" name="p_state" /></td>
+							<td><label for="project_state" class="p__i__t__label">프로젝트 상태</label> <!-- <input type="text"
+									class="p__i__t__type" id="project_state" name="p_state" /> --> <select
+								name="p_state" id="project_state" class="s__pro">
+									<option value="시작 전">시작 전</option>
+									<option value="진행 중">진행 중</option>
+									<option value="종료">종료</option>
+									<option value="취소">취소</option>
+							</select></td>
 						</tr>
 					</tbody>
 				</table>
