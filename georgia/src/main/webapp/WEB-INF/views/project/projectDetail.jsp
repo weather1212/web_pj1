@@ -75,42 +75,42 @@
 		<hr />
 
 		<section id="container">
-			<form role="form" id="detailForm" class="project__detail__form" name="detailForm"
+			<form role="form" id="detailForm" class="pro__info__form" name="detailForm"
 				method="post">
-				<table class="project__detail__table">
+				<table class="pro__info__table">
 					<tbody>
 						<tr>
-							<td><label for="project_id">프로젝트 번호</label> <input type="text"
-									id="project_id" class="e__d__t__type" name="p_id"
+							<td><label for="project_id" class="p__i__t__label">프로젝트 번호</label> <input type="text"
+									id="project_id" class="p__i__t__type" name="p_id"
 									value="${projectVO.p_id}" readonly="readonly" /></td>
 						</tr>
 						<tr>
-							<td><label for="project_name">프로젝트명</label> <input type="text"
-									id="project_name" class="e__d__t__type" name="p_name"
+							<td><label for="project_name" class="p__i__t__label">프로젝트명</label> <input type="text"
+									id="project_name" class="p__i__t__type" name="p_name"
 									value="${projectVO.p_name}" /></td>
 						</tr>
 						<tr>
-							<td><label for="project_content">프로젝트 내용</label> <textarea rows="10" cols="50"
-									id="project_content" name="p_content">${projectVO.p_content}</textarea></td>
+							<td><label for="project_content" class="p__i__t__label">프로젝트 내용</label> <textarea rows="10" cols="50"
+									id="project_content" class="p__i__t__content"  name="p_content">${projectVO.p_content}</textarea></td>
 						</tr>
 						<tr>
-							<td><label for="project_start">시작 날짜</label> <input type="date" name="pStart" id="projectStart" min="2010-07-01"
-							max="2025-06-30" class="s__pro" value="${projectVO.p_start}" >
+							<td><label for="project_start" class="p__i__t__label">시작 날짜</label> <input type="date" name="pStart" id="projectStart" min="2010-07-01"
+							max="2025-06-30" class="p__i__t__date" value="${projectVO.p_start}" >
 						</tr>
 						<tr>
-							<td><label for="project_end">종료 날짜</label> <input type="date" name="pEnd" id="projectEnd" min="2010-07-01"
-							max="2025-06-30" class="s__pro" value="${projectVO.p_end}" >
+							<td><label for="project_end" class="p__i__t__label">종료 날짜</label> <input type="date" name="pEnd" id="projectEnd" min="2010-07-01"
+							max="2025-06-30" class="p__i__t__date" value="${projectVO.p_end}" >
 						</tr>
 						<tr>
-							<td><label for="project_state">프로젝트 상태</label> <input type="text"
-									class="e__d__t__type" id="project_state" name="p_state"
+							<td><label for="project_state" class="p__i__t__label" >프로젝트 상태</label> <input type="text"
+									class="p__i__t__type" id="project_state" name="p_state"
 									value="${projectVO.p_state}" /></td>
 						</tr>
 					</tbody>
 				</table>
-				<input type="button" id="btnUpdate" class="project__detail__button" value="수정" />
-				<input type="button" id="btnDelete" class="project__detail__button" value="삭제" />
-				<input type="button" id="btnList" class="project__detail__button" value="목록" />
+				<input type="button" id="btnUpdate" class="pro__info__button" value="수정" />
+				<input type="button" id="btnDelete" class="pro__info__button" value="삭제" />
+				<input type="button" id="btnList" class="pro__info__button" value="목록" />
 			</form>
 		</section>
 		<hr />

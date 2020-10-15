@@ -75,50 +75,47 @@
 	</header>
 	<div id="root">
 		<header>
-			<h1>인사 관리</h1>
+			<h1>사원 등록</h1>
 		</header>
 		<hr />
 
-		<nav>사원 등록</nav>
-		<hr />
-
 		<section id="container">
-			<form role="form" id="detailForm" name="detailForm" method="post">
-				<table>
+			<form role="form" id="detailForm" class="emp__info__form" name="detailForm" method="post">
+				<table class="emp__info__table">
 					<tbody>
 						<tr>
-							<td><label for="emp_id">사원 번호</label> <input type="text" id="emp_id"
+							<td><label for="emp_id">사원 번호</label> <input type="text" id="emp_id" class="e__i__t__type"
 									name="emp_id" /></td>
 						</tr>
 						<tr>
-							<td><label for="emp_name">사원 이름</label> <input type="text" id="emp_name"
+							<td><label for="emp_name">사원 이름</label> <input type="text" id="emp_name" class="e__i__t__type"
 									name="emp_name" /></td>
 						</tr>
 						<tr>
-							<td><label for="emp_department">사원 부서</label> <input type="text"
+							<td><label for="emp_department">사원 부서</label> <input type="text" class="e__i__t__type"
 									id="emp_department" name="emp_department" /></td>
 						</tr>
 						<tr>
-							<td><label for="emp_position">사원 직책</label> <input type="text"
+							<td><label for="emp_position">사원 직책</label> <input type="text" class="e__i__t__type"
 									id="emp_position" name="emp_position" /></td>
 						</tr>
 						<tr>
-							<td><label for="emp_hiredate">입사일자</label> <input type="date" min="2010-07-01"
+							<td><label for="emp_hiredate">입사일자</label> <input type="date" min="2010-07-01" 
 									max="2025-06-30" name="emp_hiredate"> <%-- <fmt:formatDate value="${empVO.emp_hiredate}" pattern="yyyy-MM-dd" /></td> --%>
 						</tr>
 						<tr>
-							<td><label for="emp_profit">업무 실적</label> <input type="text" id="emp_profit"
+							<td><label for="emp_profit">업무 실적</label> <input type="text" id="emp_profit" class="e__i__t__type"
 									name="emp_profit" /></td>
 						</tr>
 						<tr>
-							<td><label for="emp_salary">사원 급여</label> <input type="text" id="emp_salary"
+							<td><label for="emp_salary">사원 급여</label> <input type="text" id="emp_salary" class="e__i__t__type"
 									name="emp_salary" /></td>
 						</tr>
 
 					</tbody>
 				</table>
-				<input type="button" id="btnCreate" value="등록완료" />
-				<input type="button" id="btnList" value="목록" />
+				<input type="button" id="btnCreate" class="emp__info__button" value="등록완료" />
+				<input type="button" id="btnList" class="emp__info__button" value="목록" />
 			</form>
 		</section>
 		<hr />

@@ -79,6 +79,7 @@ input:focus {outline:none;}
 	padding-right: 8px 12px;
 	cursor: pointer;
 	font-size: var(--font-regular);
+	color: var(--color-white);
 }
 
 .search__btn{
@@ -151,18 +152,13 @@ input:focus {outline:none;}
     padding: 10px;
 }
 
-/* empDetail 페이지 */
+/* empDetail & Create 페이지 */
 h1 {
 	text-align: center;
 	font-size: var(--font-large);
 }
 
-h2{
-	text-align: center;
-	font-size: var(--font-medium);
-}
-
-.emp__detail__form {
+.emp__info__form {
 	width: 100%;
 	display: inline-block;	
 	text-align: center;
@@ -172,12 +168,12 @@ h2{
     margin-bottom: 20px;
 }
 
-.emp__detail__table {
+.emp__info__table {
 	margin: auto;
 	margin-bottom: 20px;
 }
 
-.emp__detail__button {
+.emp__info__button {
 	background-color: var(--color-dark-grey);
 	border: none;
 	border-radius: var(--size-border-radius);
@@ -192,13 +188,15 @@ h2{
 	cursor: pointer;
 }
 
-.e__d__t__type {
+.e__i__t__type {
 	background-color: var(--color-light-white);
-	margin-left: 20px;
+	width: 300px;
+	margin-left: 30px;
 	border: 0px;
-	height: 30px;
+	height: 40px;
+	font-size: var(--font-regular);
+	padding-left: 10px;
 }
-
 
 /* projectList 페이지 */
 .pro__add {
@@ -249,3 +247,78 @@ h2{
     padding: 10px;
 }
 
+/* projectDetail & Create 페이지 */
+h1 {
+	text-align: center;
+	font-size: var(--font-large);
+}
+
+.pro__info__form {
+	width: 100%;
+	display: inline-block;	
+	text-align: center;
+	justify-content: center;
+	border-collapse: collapse;
+    font-weight: bold;
+    margin-bottom: 20px;
+    vertical-align: middle;
+}
+
+.pro__info__table {
+	margin: auto;
+	margin-bottom: 20px;
+	vertical-align: middle;
+}
+
+.pro__info__button {
+	background-color: var(--color-dark-grey);
+	border: none;
+	border-radius: var(--size-border-radius);
+	color: var(--color-white);
+	width: 80px;
+	height: 40px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: var(--font-regular);
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.p__i__t__label{
+	width: 120px;
+	padding-right: 3px;
+    line-height: 25px;
+    display: block;
+    float: left;
+    text-align: right;
+}
+
+.p__i__t__type {
+	background-color: var(--color-light-white);
+	width: 300px;
+	margin-left: 30px;
+	border: 0px;
+	height: 40px;
+	font-size: var(--font-regular);
+	padding-left: 10px;
+}
+.p__i__t__content {
+	width: 300px;
+	margin-left: 30px;
+	border: 0px;
+	background-color: var(--color-light-white);
+	height: 200px;
+}
+
+.p__i__t__date{
+	width: 300px;
+	height: auto;
+	line-height : normal;
+	padding: .9em .1em;
+	margin-left: 30px;
+	border: 1px solid #999; 
+	border-radius: 5px;
+	outline-style: none;
+	appearance: none;
+}
