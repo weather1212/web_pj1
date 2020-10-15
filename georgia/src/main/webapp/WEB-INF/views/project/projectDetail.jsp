@@ -80,32 +80,63 @@
 				<table class="pro__info__table">
 					<tbody>
 						<tr>
-							<td><label for="project_id" class="p__i__t__label">프로젝트 번호</label> <input type="text"
-									id="project_id" class="p__i__t__type" name="p_id"
+							<td><label for="project_id" class="p__i__t__label">프로젝트 번호</label> <input
+									type="text" id="project_id" class="p__i__t__type" name="p_id"
 									value="${projectVO.p_id}" readonly="readonly" /></td>
 						</tr>
 						<tr>
-							<td><label for="project_name" class="p__i__t__label">프로젝트명</label> <input type="text"
-									id="project_name" class="p__i__t__type" name="p_name"
+							<td><label for="project_name" class="p__i__t__label">프로젝트명</label> <input
+									type="text" id="project_name" class="p__i__t__type" name="p_name"
 									value="${projectVO.p_name}" /></td>
 						</tr>
 						<tr>
-							<td><label for="project_content" class="p__i__t__label">프로젝트 내용</label> <textarea rows="10" cols="50"
-									id="project_content" class="p__i__t__content"  name="p_content">${projectVO.p_content}</textarea></td>
+							<td><label for="project_content" class="p__i__t__label">프로젝트 내용</label> <textarea
+									rows="10" cols="50" id="project_content" class="p__i__t__content"
+									name="p_content">${projectVO.p_content}</textarea></td>
 						</tr>
 						<tr>
-							<td><label for="project_start" class="p__i__t__label">시작 날짜</label> <input type="date" name="pStart" id="projectStart" min="2010-07-01"
-							max="2025-06-30" class="p__i__t__date" value="${projectVO.p_start}" >
+							<td><label for="project_start" class="p__i__t__label">시작 날짜</label> <input
+									type="date" name="p_start" id="projectStart" min="2010-07-01" max="2025-06-30"
+									class="p__i__t__date" value="${projectVO.p_start}">
 						</tr>
 						<tr>
-							<td><label for="project_end" class="p__i__t__label">종료 날짜</label> <input type="date" name="pEnd" id="projectEnd" min="2010-07-01"
-							max="2025-06-30" class="p__i__t__date" value="${projectVO.p_end}" >
+							<td><label for="project_end" class="p__i__t__label">종료 날짜</label> <input
+									type="date" name="p_end" id="projectEnd" min="2010-07-01" max="2025-06-30"
+									class="p__i__t__date" value="${projectVO.p_end}">
 						</tr>
 						<tr>
-							<td><label for="project_state" class="p__i__t__label" >프로젝트 상태</label> <input type="text"
-									class="p__i__t__type" id="project_state" name="p_state"
-									value="${projectVO.p_state}" /></td>
+							<td><label for="project_state" class="p__i__t__label">프로젝트 상태</label>
+							<%--  <input
+									type="text" class="p__i__t__type" id="project_state" name="p_state"
+									value="${projectVO.p_state}" /> --%>
+								<select name="p_state" id="project_state" class="s__pro">
+									<c:if test="${projectVO.p_state == '시작 전'}">
+										<option value="시작 전" selected>시작 전</option>
+										<option value="진행 중">진행 중</option>
+										<option value="종료">종료</option>
+										<option value="취소">취소</option>
+									</c:if>
+									<c:if test="${projectVO.p_state == '진행 중'}">
+										<option value="시작 전">시작 전</option>
+										<option value="진행 중" selected>진행 중</option>
+										<option value="종료">종료</option>
+										<option value="취소">취소</option>
+									</c:if>
+									<c:if test="${projectVO.p_state == '종료'}">
+										<option value="시작 전">시작 전</option>
+										<option value="진행 중">진행 중</option>
+										<option value="종료" selected>종료</option>
+										<option value="취소">취소</option>
+									</c:if>
+									<c:if test="${projectVO.p_state == '취소'}">
+										<option value="시작 전">시작 전</option>
+										<option value="진행 중">진행 중</option>
+										<option value="종료">종료</option>
+										<option value="취소" selected>취소</option>
+									</c:if>
+							</select></td>
 						</tr>
+
 					</tbody>
 				</table>
 				<input type="button" id="btnUpdate" class="pro__info__button" value="수정" />
