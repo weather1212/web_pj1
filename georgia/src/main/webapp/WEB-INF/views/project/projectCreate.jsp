@@ -5,10 +5,6 @@
 <meta charset="UTF-8">
 <title>프로젝트 추가</title>
 <%@ include file="../include/include.jsp"%>
-<link rel="stylesheet" href="${path }/resources/css/stcss.css" />
-<link
-	href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
-	rel="stylesheet" />
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#btnList").click(function() {

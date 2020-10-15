@@ -1,20 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
 <title>사원 관리</title>
 <%@ include file="../include/include.jsp"%>
-<link rel="stylesheet" href="${path }/resources/css/stcss.css" />
-<link
-	href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
-	rel="stylesheet" />
 </head>
-
 <body>
 	<header>
 		<%@ include file="../include/header.jsp"%>
@@ -34,10 +26,14 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><input type="text" name="empId" id="empId" value="${searchEmpId }" class="s__emp"></td>
-					<td><input type="text" name="empName" id="empName" value="${searchEmpName }" class="s__emp"></td>
-					<td><input type="text" name="empDepartment" id="empDepartment" value="${searchEmpDepartment }" class="s__emp"></td>
-					<td><input type="text" name="empPosition" id="empPosition" value="${searchEmpPosition }" class="s__emp"></td>
+					<td><input type="text" name="empId" id="empId" value="${searchEmpId }"
+							class="s__emp"></td>
+					<td><input type="text" name="empName" id="empName" value="${searchEmpName }"
+							class="s__emp"></td>
+					<td><input type="text" name="empDepartment" id="empDepartment"
+							value="${searchEmpDepartment }" class="s__emp"></td>
+					<td><input type="text" name="empPosition" id="empPosition"
+							value="${searchEmpPosition }" class="s__emp"></td>
 					<td><input type="date" name="empHiredate" id="empHiredate" min="2010-07-01"
 							max="2025-06-30" value="${searchEmpHiredate }" class="s__emp"></td>
 					<td><input type="submit" class="search__btn" value="검색"></td>
@@ -80,7 +76,9 @@
 		<%
 			} else {
 		%>
-		<li><a href="empSearch?page=<%=i%>&empId=${searchEmpId }&empName=${searchEmpName }&empDepartment=${searchEmpDepartment }&empPosition=${searchEmpPosition }&empHiredate=${searchEmpHiredate }"> <span><%=i%></span>
+		<li><a
+			href="empSearch?page=<%=i%>&empId=${searchEmpId }&empName=${searchEmpName }&empDepartment=${searchEmpDepartment }&empPosition=${searchEmpPosition }&empHiredate=${searchEmpHiredate }">
+				<span><%=i%></span>
 		</a></li>
 		<%
 			}

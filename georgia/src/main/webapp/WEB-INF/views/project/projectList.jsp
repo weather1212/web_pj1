@@ -1,20 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
 <title>프로젝트 관리</title>
-<link rel="stylesheet" href="${path }/resources/css/stcss.css" />
-<link
-	href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
-	rel="stylesheet" />
 <%@ include file="../include/include.jsp"%>
 </head>
-
 <body>
 	<header>
 		<%@ include file="../include/header.jsp"%>
