@@ -27,7 +27,7 @@ public class ProjectController {
 			page = "1";
 			projectVO.setPage(0);
 		} else {
-			projectVO.setPage((Integer.parseInt(page) - 1) * 20);
+			projectVO.setPage((Integer.parseInt(page) - 1) * 10);
 		}
 		System.out.println("현재 게시물 페이지 : " + page);
 
@@ -35,10 +35,10 @@ public class ProjectController {
 		System.out.println("총 게시물 수 : " + projectListCount);
 
 		int pageCnt = 0;
-		if (projectListCount % 20 == 0) {
-			pageCnt = projectListCount / 20;
+		if (projectListCount % 10 == 0) {
+			pageCnt = projectListCount / 10;
 		} else {
-			pageCnt = projectListCount / 20 + 1;
+			pageCnt = projectListCount / 10 + 1;
 		}
 
 		List<ProjectVO> projectList = projectService.projectList(projectVO);
@@ -60,7 +60,7 @@ public class ProjectController {
 			page = "1";
 			projectVO.setPage(0);
 		} else {
-			projectVO.setPage((Integer.parseInt(page) - 1) * 20);
+			projectVO.setPage((Integer.parseInt(page) - 1) * 10);
 		}
 		System.out.println("검색 게시물 페이지 : " + page);
 
@@ -76,10 +76,10 @@ public class ProjectController {
 		System.out.println("검색 게시물 수 : " + projectListCount);
 
 		int pageCnt = 0;
-		if (projectListCount % 20 == 0) {
-			pageCnt = projectListCount / 20;
+		if (projectListCount % 10 == 0) {
+			pageCnt = projectListCount / 10;
 		} else {
-			pageCnt = projectListCount / 20 + 1;
+			pageCnt = projectListCount / 10 + 1;
 		}
 
 		List<ProjectVO> projectList = projectService.projectList(projectSearchMap);

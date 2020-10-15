@@ -15,7 +15,7 @@
 		SELECT *
 		FROM project
 		ORDER BY p_id DESC
-		LIMIT #{page}, 20
+		LIMIT #{page}, 10
 	</select>
 
 	<select id="projectSearchList" parameterType="map" resultMap="projectResult">
@@ -27,7 +27,7 @@
 		p_content LIKE CONCAT('%',#{projectContent},'%') AND p_start LIKE CONCAT('%',#{projectStart},'%')
 		AND p_end LIKE CONCAT('%',#{projectEnd},'%')
 		ORDER BY p_id DESC
-		LIMIT #{page}, 20
+		LIMIT #{page}, 10
 	</select>
 
 	<select id="projectListCount" resultType="int">
