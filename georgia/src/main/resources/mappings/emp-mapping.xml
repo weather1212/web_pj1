@@ -53,9 +53,9 @@
 	<insert id="empCreate" parameterType="emp">
 		INSERT INTO emp(emp_id, emp_name, emp_department,
 		emp_position, emp_hiredate, emp_profit,
-		emp_salary)
+		emp_salary, emp_state)
 		VALUES(#{emp_id}, #{emp_name}, #{emp_department}, #{emp_position}, #{emp_hiredate},
-		#{emp_profit }, #{emp_salary})
+		#{emp_profit }, #{emp_salary}, "재직")
 		<!-- VALUES((SELECT IFNULL(MAX(emp_id)+1,1) FROM project ALIAS_FOR_SUBQUERY), #{emp_name}, #{emp_department}, 
 			#{emp_position}, sysdate, #{emp_pfit}, #{emp_salary}) -->
 	</insert>
