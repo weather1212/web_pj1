@@ -64,14 +64,13 @@
 
 	<update id="projectUpdate" parameterType="project">
 		UPDATE project
-		SET p_name = #{p_name}, p_content =
-		#{p_content}, p_start = #{p_start}, p_end = #{p_end}, p_state = #{p_state}
+		SET p_name = #{p_name}, p_content = #{p_content}, p_start = #{p_start}, p_end = #{p_end}, p_state = #{p_state}
 		WHERE p_id = #{p_id}
 	</update>
 
 	<update id="projectDelete" parameterType="int">
 		UPDATE project
-		SET p_state = "중단"
+		SET p_state = "취소"
 		WHERE p_id = #{p_id}
 	</update>
 
